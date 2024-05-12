@@ -1,7 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const { stylint } = require('stylintrc')
-const { prettier } = require('prettierrc')
 
 const prettierOptions = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'),
@@ -9,12 +7,20 @@ const prettierOptions = JSON.parse(
 
 module.exports = {
   extends: [
-    'prettier',
+    'airbnb',
+    'plugin:jsx-a11y/recommended',
     'plugin:react/recommended',
-    'plugin:redux-saga/recommended',
-    'stylint',
+    'plugin:prettier/recommended',
   ],
-  plugins: ['prettier', 'redux-saga', 'react', 'react-hooks', 'jsx-a11y'],
+  plugins: [
+    'react',
+    'jsx-a11y',
+    'import',
+    'prettier',
+    'react-hooks',
+    'eslint-plugin-prettier',
+  ],
+
   env: {
     jest: true,
     browser: true,
