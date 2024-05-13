@@ -1,7 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Tabs from '../components/Tabs.js';
-import '../styles/HomePage.css';
 
 
 
@@ -18,9 +16,9 @@ import '../styles/HomePage.css';
   };
    return (
      <div>
-   <Helmet>
+       <Helmet>
           <title>{metaValues.name}</title>
-          <meta name="description" content={metaValues.description} />
+           <meta key="" />
           <meta property="og:title" content={metaValues.name} />
           <meta property="og:description" content={metaValues.description} />
           <meta property="og:image" content={metaValues.image.src} />
@@ -32,7 +30,6 @@ import '../styles/HomePage.css';
        <p>{metaValues.description}</p>
      </div>
         <div className="main-content">
-<Tabs />
        </div>
        </div>
       </div>

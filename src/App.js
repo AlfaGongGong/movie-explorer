@@ -1,23 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route  } from 'react-router-dom';
 
 import './App.css';
 import HomePage from './pages/HomePage.js';
+import MovieDetailsPage from './pages/MovieDetailsPage.js';
+import TvShowDetailsPage from './pages/TvShowDetailsPage.js';
+import NotFoundPage from './pages/NotFoundPage.js';
+
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="*" element={<Navigate to="<HomePage />" />} />
+        <Route path="/movie-details" element={<MovieDetailsPage />} />
+        <Route path="/tv-show-details" element={<TvShowDetailsPage />} />
+        <Route path="/not-found" element={<NotFoundPage />} />
+
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </Router>
-
-
+    </BrowserRouter>
   );
-
 }
-
-
 
 export default App;
