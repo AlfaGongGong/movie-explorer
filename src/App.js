@@ -9,16 +9,18 @@ import NotFoundPage from './pages/NotFoundPage.js';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/movie-details" element={<MovieDetailsPage />} />
-        <Route path="/tv-show-details" element={<TvShowDetailsPage />} />
-        <Route path="/not-found" element={<NotFoundPage />} />
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movie-details" element={<MovieDetailsPage />} />
+          <Route path="/tv-show-details" element={<TvShowDetailsPage />} />
+          <Route path="/not-found" element={<NotFoundPage />} />
 
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

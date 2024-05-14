@@ -1,11 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
+import MovieCard from '../components/MovieCard.js';
 
-
- function HomePage()  {
-
-
+function HomePage() {
   const metaValues = {
     name: 'Movie Explorer HomePage',
     description: 'A React.js application to explore movies and TV shows',
@@ -14,27 +11,13 @@ import { Helmet } from 'react-helmet';
       alt: 'A placeholder image',
     },
   };
-   return (
-     <div>
-       <Helmet>
-          <title>{metaValues.name}</title>
-           <meta key="" />
-          <meta property="og:title" content={metaValues.name} />
-          <meta property="og:description" content={metaValues.description} />
-          <meta property="og:image" content={metaValues.image.src} />
-          <meta property="og:image:alt" content={metaValues.image.alt} />
-     </Helmet>
-     <div className="containeer">
-        <div className="title " >
-        <h1>{metaValues.name}</h1>
-       <p>{metaValues.description}</p>
-     </div>
-        <div className="main-content">
-       </div>
-       </div>
-      </div>
-    );
-  }
-
+  return (
+    <div className="containeer" id="trending" key={metaValues}>
+      <h1>{metaValues.name}</h1>
+      <p>{metaValues.description}</p>
+      <MovieCard />
+    </div>
+  );
+}
 
 export default HomePage;
