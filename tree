@@ -1,0 +1,37 @@
+movie-explorer/
+┣ husky/
+┣ node_modules/
+┃
+┣ public/
+┃ ┗ index.html
+┣ src/
+┃ ┣ components/
+┃ ┃ ┣ MovieCard.js
+┃ ┃ ┣ SearchBar.js
+┃ ┃ ┗ Tabs.js
+┃ ┣ hooks/
+┃ ┃ ┣ AxiosConf.js
+┃ ┃ ┗ trendingMoviesApi.js
+┃ ┣ images/
+┃ ┃ ┗ default.jpg
+┃ ┣ pages/
+┃ ┃ ┣ HomePage.js
+┃ ┃ ┣ MovieDetailsPage.js
+┃ ┃ ┣ NotFoundPage.js
+┃ ┃ ┗ TvShowDetailsPage.js
+┃ ┣ styles/
+┃ ┃ ┣ HomePage.css
+┃ ┃ ┣ main.css
+┃ ┃ ┣ MovieDetails.css
+┃ ┃ ┣ NotFoundPage.css
+┃ ┃ ┣ responsive.css
+┃ ┃ ┗ TvShowDetailsPage.css
+┃ ┣ App.css
+┃ ┣ App.js
+┃ ┣ index.css
+┃ ┗ index.js
+┣ .env
+┣ .gitignore
+┣ package-lock.json
+┣ package.json
+┗ README.md
