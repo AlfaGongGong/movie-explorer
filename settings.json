@@ -1,4 +1,509 @@
 {
-  "github.copilot.chat.terminalChatLocation": "quickChat",
-  "inlineChat.accessibleDiffView": "on"
+  // Markdown settings
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+
+  // JSON settings
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // JSONC settings
+  "[jsonc]": {
+    "breadcrumbs.showPackages": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // HTML settings
+  "[html]": {
+    "editor.defaultFormatter": "GitHub.copilot"
+  },
+
+  // JavaScript settings
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // TypeScript settings
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // JavaScript React settings
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // TypeScript React settings
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Git settings
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+
+  // Workbench settings
+  "workbench.colorTheme": "Shades of Purple",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editor.scrollToSwitchTabs": true,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.showIcons": true,
+  "workbench.editor.decorations.colors": true,
+  "workbench.editor.decorations.badges": true,
+  "workbench.editor.decorations.badgesNumeral": true,
+  "workbench.editor.decorations.badgesTrending": true,
+  "workbench.editor.decorations.badgesStable": true,
+  "workbench.editor.languageDetection": true,
+
+  // Live Sass Compile settings
+  "liveSassCompile.settings.watchOnLaunch": true,
+  "liveSassCompile.settings.excludeList": [
+    "/**/node_modules/**",
+    "/.vscode/**"
+  ],
+
+  // GitHub Copilot settings
+  "github.copilot.enable": {
+    "scminput": "true",
+    "plaintext": "true",
+    "comments": "true",
+    "strings": "true",
+    "language": "true",
+    "keywords": "true",
+    "identifiers": "true",
+    "literals": "true",
+    "dictionaries": "true",
+    "user": "true",
+    "usercode": "true",
+    "usercomments": "true",
+    "userstrings": "true",
+    "userkeywords": "true",
+    "useridentifiers": "true",
+    "userliterals": "true",
+    "html": "true",
+    "css": "true",
+    "scss": "true",
+    "less": "true",
+    "vue": "true",
+    "xml": "true",
+    "node.js": "true",
+    "javascript": "true",
+    "typescript": "true",
+    "jsx": "true",
+    "tsx": "true",
+    "python": "true",
+    "go": "true",
+    "ruby": "true",
+    "php": "true",
+    "csharp": "true",
+    "cpp": "true",
+    "java": "true",
+    "scala": "true",
+    "kotlin": "true",
+    "rust": "true",
+    "swift": "true",
+    "sql": "true",
+    "shellscript": "true",
+    "powershell": "true",
+    "yaml": "true",
+    "json": "true",
+    "markdown": "true",
+    "WindowsPowerShell": "true",
+    "Bash": "true",
+    "commandline": "true",
+    "cmd": "true"
+  },
+
+  // Editor settings
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 24,
+  "editor.letterSpacing": 0.5,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": false,
+  "editor.renderControlCharacters": true,
+  "editor.renderLineHighlight": "all",
+  "editor.rulers": [80, 120],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "never"
+  },
+  "files.autoSaveWorkspaceFilesOnly": true,
+  "node-module-intellisense.scanFileModules": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+  "editor.detectIndentation": false,
+  "editor.dragAndDrop": true,
+  "editor.emptySelectionClipboard": true,
+  "editor.find.addExtraSpaceOnTop": true,
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.quickSuggestionsDelay": 0,
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.suggestSelection": "first",
+  "editor.suggest.filterGraceful": true,
+  "editor.suggest.localityBonus": true,
+  "editor.suggest.shareSuggestSelections": true,
+  "editor.suggest.showIcons": true,
+  "editor.suggest.showStatusBar": true,
+  "editor.suggest.snippetsPreventQuickSuggestions": true,
+  "editor.suggestFontSize": 14,
+  "editor.suggestLineHeight": 24,
+  "editor.suggest.showWords": true,
+  "editor.suggest.showKeywords": true,
+  "editor.suggest.showClasses": true,
+  "editor.suggest.showConstructors": true,
+  "editor.suggest.showFields": true,
+  "editor.suggest.showMethods": true,
+  "editor.suggest.showFunctions": true,
+  "editor.suggest.showVariables": true,
+  "editor.suggest.showConstants": true,
+  "editor.suggest.showStructs": true,
+  "editor.suggest.showEvents": true,
+  "editor.suggest.showOperators": true,
+  "editor.suggest.showUnits": true,
+  "editor.suggest.showValues": true,
+  "editor.suggest.showModules": true,
+  "editor.suggest.showProperties": true,
+  "editor.suggest.showEnums": true,
+  "editor.suggest.showEnumMembers": true,
+  "editor.suggest.showReferences": true,
+  "editor.suggest.showColors": true,
+  "editor.suggest.showFiles": true,
+  "editor.suggest.showFolders": true,
+  "editor.suggest.showTypeParameters": true,
+  "editor.suggest.showSnippets": true,
+  "editor.suggest.showUsers": true,
+  "editor.suggest.showIssues": true,
+
+  // Files settings
+  "files.autoSaveDelay": 50000,
+
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true
+  },
+  "files.associations": {
+    "*.js": "javascript",
+    "*.env.example": "plaintext",
+    "*.jsx": "javascriptreact",
+    "*.ts": "typescript",
+    "*.tsx": "typescriptreact",
+    "*.html": "html",
+    "*.json": "jsonc",
+    "*.css": "css",
+    "*.scss": "scss",
+    "*.less": "less",
+    "*.md": "markdown",
+    "*.mdx": "markdown",
+    "*.vue": "vue",
+    "*.php": "php",
+    "*.py": "python",
+    "*.go": "go",
+    "*.rb": "ruby",
+    "*.java": "java",
+    "*.c": "c",
+    "*.cpp": "cpp",
+    "*.h": "c",
+    "*.hpp": "cpp",
+    "*.rs": "rust",
+    "*.sql": "sql",
+    "*.sh": "shellscript",
+    "*.ps1": "powershell",
+    "*.yaml": "yaml",
+    "*.yml": "yaml",
+    "*.toml": "toml",
+    "*.ini": "ini",
+    "*.properties": "properties",
+    "*.conf": "conf",
+    "*.txt": "plaintext",
+    "*.gitignore": "gitignore",
+    "*.gitconfig": "gitconfig",
+    "*.gitattributes": "gitattributes",
+    "*.npmignore": "gitignore",
+    "*.npmrc": "ini",
+    "*.yarnrc": "ini",
+    "*.bowerrc": "jsonc",
+    "*.editorconfig": "ini",
+    "*.babelrc": "jsonc",
+    "*.eslintrc": "jsonc",
+    "*.prettierrc": "jsonc",
+    "*.prettierignore": "gitignore",
+    "*.stylelintrc": "jsonc",
+    "*.dockerignore": "gitignore",
+    "*.dockerfile": "dockerfile",
+    "*.vscodeignore": "gitignore",
+    "*.vscodeextension": "jsonc",
+    "*.code-workspace": "jsonc",
+    "*.csproj": "xml",
+    "*.ruleset": "jsonc",
+    "*.sln": "xml",
+    "*.cs": "csharp",
+    "*.csx": "csharp",
+    "*.cake": "csharp",
+    "*.fs": "fsharp",
+    "*.fsx": "fsharp",
+    "*.fsi": "fsharp",
+    "*.fsproj": "xml",
+    "*.nuspec": "xml",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.tsserver.log": "verbose",
+    "typescript.tsserver.logFile": "c:\\Users\\joshu\\AppData\\Roaming\\Code\\logs\\20210901T170903\\tsserver.log",
+    "typescript.tsserver.experimental.logFile": "c:\\Users\\joshu\\AppData\\Roaming\\Code\\logs\\20210901T170903\\tsserver.log",
+    "typescript.tsserver.experimental.logVerbosity": "verbose",
+    "typescript.tsserver.experimental.typingsCacheLocation": "c:\\Users\\joshu\\AppData\\Roaming\\Code\\logs\\20210901T170903\\typingsCache"
+  },
+
+  // Jest settings
+  "jest.runMode": "on-save",
+
+  // Live Sass Compile settings
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/css"
+    }
+  ],
+
+  // Live Server settings
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.ignoreFiles": [
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "**/*.map"
+  ],
+
+  // Terminal settings
+  "terminal.integrated.fontFamily": "Consolas",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorWidth": 2,
+  "terminal.integrated.drawBoldTextInBrightColors": true,
+  "terminal.integrated.fontWeightBold": "bold",
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.letterSpacing": 0.5,
+  "terminal.integrated.rightClickBehavior": "copyPaste",
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.windowsEnableConpty": true,
+  "terminal.integrated.allowChords": true,
+  "terminal.integrated.commandsToSkipShell": [],
+  "terminal.integrated.env.windows": {},
+  "terminal.integrated.localEchoLatencyThreshold": 20,
+
+  // Explorer settings
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+
+  // Workbench editor settings
+  "workbench.editor.tabActionCloseVisibility": true,
+
+  // SCSS settings
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+
+  // Editor settings
+  "editor.linkedEditing": true,
+  "editor.wrappingIndent": "indent",
+
+  // Workbench settings
+  "workbench.activityBar.location": "top",
+
+  // CSS settings
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Editor minimap settings
+  "editor.minimap.size": "fill",
+  "editor.minimap.showSlider": "always",
+
+  // Editor auto-closing settings
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingComments": "always",
+
+  // Editor auto-indentation settings
+  "editor.autoIndent": "advanced",
+
+  // Workbench experimental settings
+  "workbench.experimental.cloudChanges.autoStore": "onShutdown",
+  "workbench.editor.empty.hint": "hidden",
+
+  // GitHub Copilot chat settings
+  "github.copilot.chat.terminalChatLocation": "terminal",
+  "github.copilot.chat.welcomeMessage": "never",
+  "github.copilot.chat.showChat": "always",
+  "github.copilot.chat.showChatOnStartup": true,
+  "github.copilot.chat.showChatOnStartupDelay": 5000,
+  "github.copilot.chat.showChatOnStartupMessage": "Welcome to GitHub Copilot! Ask me anything.",
+
+  // Terminal integrated tabs settings
+  "terminal.integrated.tabs.hideCondition": "never",
+  "terminal.integrated.tabs.showActiveTerminal": "always",
+  "terminal.integrated.tabs.defaultColor": "terminal.ansiRed",
+
+  // Editor sticky scroll settings
+  "editor.stickyScroll.enabled": false,
+
+  // Workbench layout control settings
+  "workbench.layoutControl.enabled": true,
+
+  // Red Hat telemetry settings
+  "redhat.telemetry.enabled": true,
+
+  // Terminal settings
+  "terminal.explorerKind": "both",
+  "terminal.integrated.confirmOnKill": "never",
+  "terminal.integrated.middleClickBehavior": "default",
+  "terminal.sourceControlRepositoriesKind": "both",
+
+  // VS Kubernetes settings
+  "vs-kubernetes": {
+    "vscode-kubernetes.kubectl-path-windows": "C:\\Users\\AlfaGongGong\\.vs-kubernetes\\tools\\kubectl\\kubectl.exe",
+    "vscode-kubernetes.helm-path-windows": "C:\\Users\\AlfaGongGong\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
+    "vscode-kubernetes.minikube-path-windows": "C:\\Users\\AlfaGongGong\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe"
+  },
+
+  // YAML settings
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+
+  // Terminal accessibility settings
+  "terminal.integrated.accessibleViewFocusOnCommandExecution": false,
+  "terminal.integrated.allowMnemonics": true,
+  "terminal.integrated.autoReplies": {},
+
+  // Tree Generator settings
+  "tree-generator.defaultTarget": "ASCII",
+  "tree-generator.defaultDepth": 3,
+
+  // Inline Chat settings
+  "inlineChat.holdToSpeech": false,
+
+  // Terminal integrated profiles settings
+  "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "pilot": "true"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Windows PowerShell": {
+      "source": "PowerShell"
+    }
+  },
+  // ESLint settings
+  "eslint.validate": [],
+  "eslint.options": {
+    "extensions": [],
+    "rules": {
+      "semi": "off",
+      "quotes": "off"
+    }
+  },
+  "eslint.format.enable": false,
+  "eslint.run": "onType",
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+
+  // JavaScript settings
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // Diff Editor settings
+  "diffEditor.diffAlgorithm": "advanced",
+  "diffEditor.experimental.showEmptyDecorations": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.wordWrap": "on",
+
+  // Editor inline suggest settings
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.showToolbar": "always",
+  "editor.screenReaderAnnounceInlineSuggestion": false,
+  "editor.suggest.insertMode": "replace",
+  "editor.suggest.preview": true,
+  "editor.suggest.showDeprecated": false,
+  "editor.wordBasedSuggestions": "allDocuments",
+
+  // Files settings
+  "files.saveConflictResolution": "overwriteFileOnDisk",
+
+  // Auto Close Tag settings
+  "auto-close-tag.disableOnLanguage": [],
+  "json.schemas": [
+    {
+      "fileMatch": ["/myfile"],
+      "url": "schemaURL"
+    }
+  ],
+  "files.autoSaveWhenNoErrors": true,
+  "files.refactoring.autoSave": false,
+  "git.autorefresh": false,
+  "path-autocomplete.pathMappings": {
+    "src": "src"
+  },
+  "editor.defaultFormatter": "GitHub.copilot",
+  "workbench.list.typeNavigationMode": "trigger",
+  "workbench.reduceMotion": "on",
+  "workbench.preferredHighContrastColorTheme": "Copilot Theme",
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.gpuAccelerationOptions": {
+    "canvas": "auto",
+    "webgl": "auto"
+  },
+  "npm.packageManager": "npm",
+  "path-autocomplete.extensionOnImport": true,
+  "path-intellisense.autoSlashAfterDirectory": true,
+  "path-intellisense.autoTriggerNextSuggestion": true,
+  "quokka.snapsAutoRunConfirmOnEdit": false,
+  "quokka.snapsAutoRunConfirmOnOpen": false,
+  "quokka.snapsAutoDiscovery": false,
+  "rest-client.formParamEncodingStrategy": "never",
+  "console-ninja.featureSet": "Community"
 }

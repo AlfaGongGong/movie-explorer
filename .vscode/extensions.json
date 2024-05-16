@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "editorconfig.editorconfig",
+        "ritwickdey.liveserver",
+        "sibiraj-s.vscode-scss-formatter",
+        "ahmadawais.shades-of-purple",
+        "mtxr.sqltools",
+        "kiennp.web-assets-compiler"
+    ]
+}
