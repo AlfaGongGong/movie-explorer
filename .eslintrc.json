@@ -1,0 +1,41 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+
+  "rules": {
+    "indent": "off",
+    "linebreak-style": "off",
+    "quotes": ["warn", "single"],
+    "semi": ["error", "always"],
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    "no-undef": "warn",
+    "no-unreachable": "warn",
+    "no-irregular-whitespace": "warn",
+    "no-sparse-arrays": "warn",
+    "no-unexpected-multiline": "warn",
+    "no-unsafe-negation": "warn",
+    "no-constant-condition": "warn",
+    "no-prototype-builtins": "warn",
+    "no-async-promise-executor": "warn",
+    "no-misleading-character-class": "warn",
+    "no-useless-catch": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react"]
+}
