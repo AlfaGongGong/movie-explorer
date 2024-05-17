@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
 font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
   color: #333;
@@ -15,30 +13,19 @@ font-family: 'Arial', sans-serif;
 .home-main-content h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  text-align: center;
+  align-self: center;
 }
 
 .home-main-content p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  text-align: center;
+  align-self: center;
 }
 
 
 
-.search-select {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-
-}
-.popular-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
- margin-top: 20px;
-}
 
 
 button,

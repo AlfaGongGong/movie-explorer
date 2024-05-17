@@ -1,0 +1,27 @@
+.button-group {
+      display: flex;
+    margin: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 10px;
+}
+
+
+.search {
+  margin-right: 10px;
+  width: 100%;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+}

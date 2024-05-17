@@ -1,43 +1,33 @@
 import React, {useState, useEffect} from 'react';
+import PropTypes from 'prop-types';
+import '../styles/Popular.css';
 import config from '../config.json';
 import axios from '../axios.js';
 
-const Popular = () => {
-  const [activeTab, setActiveTab] = useState('TV SHOWS');
+const Popular = ({activeTab}) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const type = activeTab === 'TV SHOWS' ? 'tv' : 'movie';
+      const type = activeTab === 'TV Shows' ? 'tv' : 'movie';
       const response = await axios.get(
-        `/${type}/popular?language=en-US&page=1`
+        `/${type}/popular?language=en-US&page=1&limit=10`
       );
       const data = response.data;
-
       if (response.status === 200) {
-        setItems(data.results);
+        setItems(data.results.slice(0, 10));
       }
     }
     fetchData();
   }, [activeTab]);
 
   return (
-    // Add the select element to the JSX
-
-    <div className='popular-container' id='selectView'>
-      <h2>Popular {activeTab}</h2>
-      <select
-        value={activeTab}
-        onChange={(e) => setActiveTab(e.target.value)}
-        className='select'
-      >
-        <option value='TV SHOWS'>TV SHOWS</option>
-        <option value='MOVIES'>MOVIES</option>
-      </select>
-      <div className='card'>
+    <div className='content-wrapper'>
+      <h2>TOP 10 Popular {activeTab}</h2>
+      <div className='cards'>
         {items
           ? items.map((item) => (
-              <div key={item.id} className='card-wrapper'>
+              <div key={item.id} className='card'>
                 <img
                   src={`${config.base_url}${item.poster_path}`}
                   alt={`${item.original_title || item.original_name} poster`}
@@ -48,12 +38,24 @@ const Popular = () => {
                   First air date: {item.first_air_date || item.release_date}
                 </p>
                 <p>Rating: {item.vote_average}</p>
+                <button
+                  className='card-button'
+                  onClick={() => {
+                    window.location.href = `/${item.media_type}/${item.id}`;
+                  }}
+                >
+                  View details
+                </button>
               </div>
             ))
-          : 'No response'}
+          : 'No response from the server'}
       </div>
     </div>
   );
+};
+
+Popular.propTypes = {
+  activeTab: PropTypes.string.isRequired,
 };
 
 export default Popular;

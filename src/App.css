@@ -1,5 +1,22 @@
 
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
   body {
   background-color: #F5F5F5;
   font-family: 'Roboto', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
