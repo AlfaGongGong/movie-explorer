@@ -1,118 +1,70 @@
-# Movie Explorer Web App
+# Getting Started with Create React App
 
-## Overview
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Movie Explorer is a React-based web application that allows users to browse and search for top-rated movies and TV shows. Utilizing TheMovieDB API, the app provides a seamless experience with live search functionality and detailed views of each title.
+## Available Scripts
 
-## Features
+In the project directory, you can run:
 
-- Display top 10 rated TV shows and movies.
-- Live search functionality for movies and TV shows.
-- Detailed view for individual movie and TV show items.
-- Responsive design for various screen sizes.
+### `npm start`
 
-## Getting Started
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Prerequisites
+### `npm test`
 
-- Node.js
-- npm or yarn
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Installing
+### `npm run build`
 
-Clone the repository:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```bash
-git clone https://github.com/yourusername/movie-explorer.git
-```
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Navigate to the project directory:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```bash
-cd movie-explorer
-```
+### `npm run eject`
 
-Install dependencies:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-```bash
-npm install
-```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Create a .env file in the root directory and add your API key, which you can obtain from TheMovieDB API:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-```bash
-API_KEY=your_api_key
-AUTH=Baerer your_auth_key
-HOST=https://api.themoviedb.org
-RESULT=application/json
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Learn More
 
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Running the Application
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Start the development server:
+### Code Splitting
 
-```bash
-npm start
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-The application will open in your default browser at http://localhost:3000.
+### Analyzing the Bundle Size
 
-## Usage
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Home Screen
+### Making a Progressive Web App
 
-![Home Screen Placeholder](https://via.placeholder.com/800x450)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-When the app loads, the TV Shows tab is selected by default, displaying the top 10 TV shows.
+### Advanced Configuration
 
-### Search Functionality
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-![Search Functionality Placeholder](https://via.placeholder.com/800x450)
+### Deployment
 
-The search bar reacts to user input and performs a search when 3 or more characters are entered.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### Detailed View
+### `npm run build` fails to minify
 
-![Detailed View Placeholder](https://via.placeholder.com/800x450)
-
-Clicking on a movie or TV show card opens the detailed view with more information and a trailer if available.
-
-## Built With
-
-- [React](https://reactjs.org/) - The web framework used.
-
-- [Axios](https://www.npmjs.com/package/axios) - For making API requests.
-
-- [React Router](https://reactrouter.com/) - For navigation within the application.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Authors
-
-- [Jasenko Božinović]
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
-
-- TheMovieDB for providing the API.
-
-- Figma Mocks for UX/UI design.
-
-## Additional Notes
-
-- The app is designed with a mobile-first approach.
-
-- The search functionality includes debounce to minimize API calls.
-
-## Support
-
-For any additional questions or support, please contact
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
