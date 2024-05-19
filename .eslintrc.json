@@ -1,16 +1,10 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
-  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "indent": "off",
     "linebreak-style": "off",
     "quotes": "off",
-    "semi": [
-      "error",
-      "always"
-    ],
+    "semi": ["error", "always"],
     "no-console": "warn",
     "no-unused-vars": "warn",
     "no-undef": "warn",
@@ -43,7 +37,5 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ]
+  "plugins": ["react", "react-hooks"]
 }
