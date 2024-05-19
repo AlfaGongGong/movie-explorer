@@ -1,8 +1,6 @@
 {
   "github.copilot.chat.terminalChatLocation": "terminal",
   "inlineChat.accessibleDiffView": "on",
-
-
   "[markdown]": {
     "editor.wordWrap": "on"
   },
@@ -414,7 +412,6 @@
   "liveServer.settings.Watch": [
     "**/*.{html,htm,css,js}"
   ],
-  "chatgpt.gpt3.apiKey": "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",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "setting sync": true,
@@ -436,5 +433,4 @@
   ],
   "liveServer.settings.port": 5501,
   "liveServer.settings.root": "/public",
-
-  }
+}
