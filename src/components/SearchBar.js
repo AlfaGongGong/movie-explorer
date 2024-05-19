@@ -1,50 +1,43 @@
-import React, { useReducer, useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import axios from "../axios";
 import config from "../config";
 import "../styles/SearchBar.css";
 
 const SearchBar = () => {
-  const [formData, setFormData] = useReducer(formReducer, {
-    query: "",
-    type: "tv",
-  });
-  const [submitting, setSubmitting] = useState(false);
+  const [type, setType] = useState("movie");
   const [searchResults, setSearchResults] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (formData.query.length >= 3) {
-        fetchSearchResults();
-      } else {
-        setSearchResults([]);
-      }
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [formData.query, formData.type]);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-    }, 3000);
+  const handleTypeChange = (event) => {
+    setType(event.target.value);
   };
 
   const handleChange = (event) => {
-    setFormData({ [event.target.name]: event.target.value });
+    event.preventDefault();
+    const value = event.target.value;
+    setLoading(true);
+
+    setTimeout(() => {
+      function checkIfTyping(lastValue) {
+        if (lastValue === event.target.value) {
+          if (event.target.value.trim() === "") {
+            setSearchResults([]);
+            setLoading(false);
+            return;
+          }
+          fetchSearchResults(event.target.value);
+        }
+      }
+      checkIfTyping(value);
+    }, 3000);
   };
 
-  function formReducer(state, newState) {
-    return { ...state, ...newState };
-  }
-
-  const fetchSearchResults = async () => {
+  const fetchSearchResults = async (query) => {
     try {
-      const { query, type } = formData;
       const response = await axios.get(
         `/search/${type}?query=${query}&include_adult=false&language=en-US&page=1`
       );
+      setLoading(false);
       setSearchResults(response.data.results);
     } catch (error) {
       "Error fetching search results:", error;
@@ -53,8 +46,7 @@ const SearchBar = () => {
 
   return (
     <div className="search-bar">
-      {submitting && <p>Searching...</p>}
-      <form onSubmit={handleSubmit}>
+      <form>
         <fieldset>
           <label>
             Search:
@@ -63,7 +55,6 @@ const SearchBar = () => {
               name="query"
               placeholder="Search for movies or TV shows"
               onChange={handleChange}
-              value={formData.query}
               className="search-input"
             />
           </label>
@@ -73,17 +64,14 @@ const SearchBar = () => {
             Type:
             <select
               name="type"
-              onChange={handleChange}
-              value={formData.type}
+              onChange={handleTypeChange}
+              value={type}
               className="search-select"
             >
               <option value="movie">Movies</option>
               <option value="tv">TV Shows</option>
             </select>
           </label>
-          <button type="submit" className="search-button">
-            Search
-          </button>
         </fieldset>
       </form>
       <div className="search-results">
@@ -104,7 +92,8 @@ const SearchBar = () => {
             ))}
           </ul>
         )}
-        {searchResults.length === 0 && !submitting && <p>No results found</p>}
+        {(loading && <p>Searching...</p>) ||
+          (searchResults.length === 0 && <p>No results found</p>)}
       </div>
     </div>
   );
