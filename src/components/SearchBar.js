@@ -63,7 +63,7 @@ const SearchBar = ({ activeTab }) => {
               <button
                 className="card-button"
                 onClick={() => {
-                  window.location.href = `/${item.media_type}/${item.id}`;
+                  window.location.href = `${item.id}`;
                 }}
               >
                 View details
