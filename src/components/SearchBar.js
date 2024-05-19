@@ -32,10 +32,7 @@ const SearchBar = () => {
   };
 
   const handleChange = (event) => {
-    const isQuery = event.target.name === "query";
-    setFormData({
-      [event.target.name]: isQuery ? event.target.value : event.target.value,
-    });
+    setFormData({ [event.target.name]: event.target.value });
   };
 
   function formReducer(state, newState) {
@@ -43,14 +40,14 @@ const SearchBar = () => {
   }
 
   const fetchSearchResults = async () => {
-    const { query, type } = formData;
     try {
+      const { query, type } = formData;
       const response = await axios.get(
         `/search/${type}?query=${query}&include_adult=false&language=en-US&page=1`
       );
       setSearchResults(response.data.results);
     } catch (error) {
-      // TODO: Add error handling to log the error message
+      "Error fetching search results:", error;
     }
   };
 
@@ -84,48 +81,30 @@ const SearchBar = () => {
               <option value="tv">TV Shows</option>
             </select>
           </label>
-          <button
-            type="submit"
-            className="search-button"
-            onClick={handleSubmit}
-          >
+          <button type="submit" className="search-button">
             Search
           </button>
         </fieldset>
       </form>
       <div className="search-results">
-        {searchResults.length === 0 && <p>No results found</p>}
         {searchResults.length > 0 && (
-          <div>
-            <p>Results: {searchResults.length}</p>
-            {searchResults.map((result) => {
-              // Check if the result matches the search query
-              const matchesQuery = result.original_title
-                .toLowerCase()
-                .includes(formData.query.toLowerCase());
-
-              // If the result matches the search query, display the type, title, image, and overview
-              if (matchesQuery) {
-                return (
-                  <div key={result.id} className="search-result">
-                    <img
-                      src={`${config.image_base_url}${result.poster_path}`}
-                      alt={result.original_title}
-                      className="search-result-image"
-                    />
-                    <div className="search-result-info">
-                      <h3>{result.original_title}</h3>
-                      <p>{result.overview}</p>
-                    </div>
-                  </div>
-                );
-              }
-
-              // If the result doesn't match the search query, return null
-              return null;
-            })}
-          </div>
+          <ul>
+            {searchResults.map((result) => (
+              <li key={result.id}>
+                <img
+                  src={`${config.base_url}${result.poster_path}`}
+                  alt={result.original_title}
+                  className="search-result-image"
+                />
+                <div className="search-result-info">
+                  <h3>{result.original_title}</h3>
+                  <p>{result.overview}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         )}
+        {searchResults.length === 0 && !submitting && <p>No results found</p>}
       </div>
     </div>
   );

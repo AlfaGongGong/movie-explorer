@@ -9,9 +9,9 @@ const HomePage = () => {
 
   return (
     <div className="home-main-content">
-      <h1>Welcome to the home page of the Movie Explorer</h1>
+      <h1>Welcome to the Movie Explorer</h1>
       <p>Your no1 choice to get a position at REBUS</p>
-      <ButtonGroup activeTab={activeTab} setActiveTab={setActiveTab} /> {}
+      <ButtonGroup activeTab={activeTab} setActiveTab={setActiveTab} />
       <SearchBar />
       <Popular activeTab={activeTab} />
     </div>
