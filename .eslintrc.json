@@ -1,11 +1,16 @@
 {
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "rules": {
     "indent": "off",
     "linebreak-style": "off",
-    "quotes": ["warn", "single"],
-    "semi": ["error", "always"],
+    "quotes": "off",
+    "semi": [
+      "error",
+      "always"
+    ],
     "no-console": "warn",
     "no-unused-vars": "warn",
     "no-undef": "warn",
@@ -18,7 +23,8 @@
     "no-prototype-builtins": "warn",
     "no-async-promise-executor": "warn",
     "no-misleading-character-class": "warn",
-    "no-useless-catch": "warn"
+    "no-useless-catch": "warn",
+    "react/prop-types": "off"
   },
   "settings": {
     "react": {
@@ -37,5 +43,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react"]
+  "plugins": [
+    "react"
+  ]
 }

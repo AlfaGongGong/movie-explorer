@@ -1,30 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import '../styles/ButtonGroup.css';
+import React from "react";
+import PropTypes from "prop-types";
+import "../styles/ButtonGroup.css";
 
-const ButtonGroup = ({activeTab, setActiveTab}) => {
+const ButtonGroup = ({ activeTab, setActiveTab }) => {
   return (
-    <div className='button-group'>
-      <div className='buttons'>
+    <div className="button-group">
+      <div className="buttons">
         <button
-          className={`button ${activeTab === 'TV Shows' ? 'active' : ''}`}
-          onClick={() => setActiveTab('TV SHOWS')}
+          onClick={() => setActiveTab("TV Shows")}
+          className={activeTab === "TV Shows" ? "active" : ""}
         >
-          TV SHOWS
+          TV Shows
         </button>
         <button
-          className={`button ${activeTab === 'Movies' ? 'active' : ''}`}
-          onClick={() => setActiveTab('Movies')}
+          onClick={() => setActiveTab("Movies")}
+          className={activeTab === "Movies" ? "active" : ""}
         >
-          MOVIES
+          Movies
         </button>
-      </div>
-      <div className='search'>
-        <input
-          type='text'
-          placeholder='Search for a movie or TV show'
-          className='search-input'
-        />
       </div>
     </div>
   );
