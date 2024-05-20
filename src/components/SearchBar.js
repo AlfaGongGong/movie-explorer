@@ -5,6 +5,7 @@ import "../styles/SearchBar.css";
 
 const SearchBar = () => {
   const [type, setType] = useState("movie");
+
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
