@@ -17,6 +17,9 @@ const ButtonGroup = ({ activeTab, setActiveTab }) => {
       >
         Movies
       </button>
+      <button className="back-button" onClick={() => window.history.back()}>
+        Back
+      </button>
     </div>
   );
 };

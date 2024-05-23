@@ -8,13 +8,25 @@
     font-size: 1.8rem;
   }
 
-  .buttons {
+  .button-group button {
     justify-content: center;
+    padding: 8px 16px;
+    margin: 5px;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 576px) {
   .card {
     width: 100%;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }

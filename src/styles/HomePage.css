@@ -2,21 +2,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #ffffff;
+  color: #333333;
   line-height: 1.6;
-  padding: 20px;
+  padding: 40px;
   min-height: 80vh;
 }
 
 .home-main-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .home-main-content p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
   text-align: center;
 }

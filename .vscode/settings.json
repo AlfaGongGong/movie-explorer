@@ -22,7 +22,7 @@
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "git.autofetch": true,
-  "workbench.colorTheme": "Copilot Theme - Higher Contrast",
+  "workbench.colorTheme": "Shades of Purple",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.editor.enablePreview": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,

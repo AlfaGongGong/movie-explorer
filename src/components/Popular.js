@@ -11,7 +11,6 @@ const Popular = ({ activeTab }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const type = activeTab === "TV Shows" ? "tv" : "movie";
         const response = await axios.get(
           `/${type}/popular?language=en-US&page=1`
         );
@@ -32,22 +31,34 @@ const Popular = ({ activeTab }) => {
         {items.length > 0 ? (
           items.map((item) => (
             <div key={item.id} className="card">
-              <img
-                src={`${config.base_url}${item.poster_path}`}
-                alt={`${item.original_title || item.original_name} poster`}
-                className="card-image"
-              />
-              <h3>{item.original_title || item.original_name}</h3>
-              <p>First air date: {item.first_air_date || item.release_date}</p>
-              <p>Rating: {item.vote_average}</p>
-              <button
-                className="card-button"
-                onClick={() => {
-                  window.location.href = `/${type}/${item.id}`;
-                }}
-              >
-                View details
-              </button>
+              <div className="card-header">
+                <img
+                  src={`${config.base_url}${item.poster_path}`}
+                  alt={`${item.original_title || item.original_name} poster`}
+                  className="card-image"
+                />
+                <h3 className="card-title">
+                  {item.original_title || item.original_name}
+                </h3>
+              </div>
+              <div className="card-body">
+                <p className="card-release-date">
+                  Release Date: {item.release_date}
+                </p>
+                <p className="card-rating">
+                  Rating: {item.vote_average} of ({item.vote_count})
+                </p>
+              </div>
+              <div className="card-footer">
+                <button
+                  className="card-button"
+                  onClick={() => {
+                    window.location.href = `/details/${type}/${item.id}`;
+                  }}
+                >
+                  View Details
+                </button>
+              </div>
             </div>
           ))
         ) : (

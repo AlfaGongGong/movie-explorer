@@ -4,13 +4,32 @@ import config from "../config";
 import "../styles/SearchBar.css";
 
 const SearchBar = () => {
-  const [type, setType] = useState("movie");
+  const [type, setType] = useState("tv");
 
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const handleTypeChange = (event) => {
-    setType(event.target.value);
+    function checkIfTyping(lastValue) {
+      if (lastValue === event.target.value) {
+        if (event.target.value.trim() === "") {
+          setSearchResults([]);
+          setLoading(false);
+          return;
+        }
+        fetchSearchResults(event.target.value);
+        setSearchResults(
+          searchResults.filter(
+            (result) =>
+              result.title &&
+              result.title
+                .toLowerCase()
+                .includes(event.target.value.toLowerCase())
+          )
+        );
+      }
+    }
+    checkIfTyping(event.target.value);
   };
 
   const handleChange = (event) => {
@@ -41,42 +60,36 @@ const SearchBar = () => {
       setLoading(false);
       setSearchResults(response.data.results);
     } catch (error) {
-      "Error fetching search results:", error;
+      console.error("Error fetching search results:", error); // eslint-disable-line no-console
     }
   };
 
   return (
     <div className="search-bar">
       <form>
-        <fieldset>
-          <label>
-            Search:
-            <input
-              type="text"
-              name="query"
-              placeholder="Search for movies or TV shows"
-              onChange={handleChange}
-              className="search-input"
-            />
-          </label>
-        </fieldset>
-        <fieldset>
-          <label>
-            Type:
-            <select
-              name="type"
-              onChange={handleTypeChange}
-              value={type}
-              className="search-select"
-            >
-              <option value="movie">Movies</option>
-              <option value="tv">TV Shows</option>
-            </select>
-          </label>
-        </fieldset>
+        <input
+          type="text"
+          name="query"
+          placeholder="Search for movies or TV shows"
+          onChange={handleTypeChange}
+          className="search-input"
+        />
+        <select
+          name="type"
+          onChange={(event) => setType(event.target.value)}
+          value={type}
+          className="search-select"
+        >
+          <option value="movie">Movies</option>
+          <option value="tv">TV Shows</option>
+        </select>
+        <button type="submit" className="search-button" onClick={handleChange}>
+          Search
+        </button>
       </form>
-      <div className="search-results">
-        {searchResults.length > 0 && (
+      {searchResults.length > 0 && (
+        <div className="search-results">
+          <h3>Search Results</h3>
           <ul>
             {searchResults.map((result) => (
               <li key={result.id}>
@@ -92,9 +105,13 @@ const SearchBar = () => {
               </li>
             ))}
           </ul>
-        )}
+        </div>
+      )}
+      <div className="search-results">
         {(loading && <p>Searching...</p>) ||
-          (searchResults.length === 0 && <p>No results found</p>)}
+          (loading !== loading && searchResults.length === 0 && (
+            <p>No results found</p>
+          ))}
       </div>
     </div>
   );
