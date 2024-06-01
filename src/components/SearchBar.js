@@ -49,7 +49,7 @@ const SearchBar = () => {
         }
       }
       checkIfTyping(value);
-    }, 3000);
+    });
   };
 
   const fetchSearchResults = async (query) => {
