@@ -18,7 +18,7 @@ const Popular = ({ activeTab }) => {
           setItems(response.data.results.slice(0, 10));
         }
       } catch (error) {
-        "Error fetching popular items:", error;
+        console.error("Error fetching popular items:", error); // eslint-disable-line no-console
       }
     };
     fetchData();

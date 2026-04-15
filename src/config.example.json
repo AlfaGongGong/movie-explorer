@@ -1,0 +1,4 @@
+{
+  "TMDB_api_key": "YOUR_TMDB_API_READ_ACCESS_TOKEN_HERE",
+  "base_url": "https://image.tmdb.org/t/p/w500"
+}

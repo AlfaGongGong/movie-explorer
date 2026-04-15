@@ -22,10 +22,9 @@ const DetailsPage = () => {
   const getMovieDetails = async (id) => {
     try {
       const response = await axios.get(
-        `/${type}/${id}??append_to_response=Images%2CReviews%2CVideos%2CWatch%20Providers&language=en-US' `
+        `/${type}/${id}?append_to_response=images,reviews,videos&language=en-US`
       );
-      const details = response.data;
-      return details;
+      return response.data;
     } catch (error) {
       console.error("Error fetching movie details:", error); // eslint-disable-line no-console
     }
@@ -41,9 +40,8 @@ const DetailsPage = () => {
 
   const getMovieVideos = async (id) => {
     try {
-      const response = async () => axios.get(`/${type}/${id}/videos`);
-      const videos = response.data;
-      return videos;
+      const response = await axios.get(`/${type}/${id}/videos`);
+      return response.data.results;
     } catch (error) {
       console.error("Error fetching movie videos:", error); // eslint-disable-line no-console
     }
@@ -87,9 +85,9 @@ const DetailsPage = () => {
       </p>
       <p>
         Production companies:{" "}
-        {details.production_companies.map((pc) => pc.name).join(", ")}
+        {(details.production_companies || []).map((pc) => pc.name).join(", ")}
       </p>
-      <p>Genres: {details.genres.map((genre) => genre.name).join(", ")}</p>
+      <p>Genres: {(details.genres || []).map((genre) => genre.name).join(", ")}</p>
       <button onClick={handleBack}>Back</button>
     </div>
   );
